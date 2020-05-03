@@ -1,7 +1,11 @@
 import React from 'react';
+import GlobalStyle from './styles/global';
 
-function App() {
-  return <h1>Shilton</h1>;
-}
+const App: React.FC = () => (
+  <>
+    <h1>Shilton</h1>
+    <GlobalStyle />
+  </>
+);
 
 export default App;

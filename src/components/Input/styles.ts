@@ -1,6 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+  isFocused: boolean;
+  isFilled: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   width: 100%;
   padding: 16px;
   color: #666360;
@@ -13,6 +18,22 @@ export const Container = styled.div`
   & + div {
     margin-top: 8px;
   }
+
+  /* Focus input selected */
+  ${(props) =>
+    props.isFocused &&
+    css`
+      color: #ff9000;
+      border-color: #ff9000;
+    `}
+
+  /* Blur input */
+  ${(props) =>
+    props.isFilled &&
+    css`
+      color: #ff9000;
+    `}
+
 
   input {
     flex: 1;
